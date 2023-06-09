@@ -1,0 +1,43 @@
+<main class="content">
+  <table class="table align-middle mb-0 bg-white table table-dark table-striped mt-1 ">
+  <thead class="bg-light">
+  <tr class="m-3">
+    <th>Name</th>
+    <th>From Account</th>
+    <th>To Account</th>
+    <th>Transaction Type</th>
+    <th>Amount</th>
+    <th>Time</th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <div th:if="${singleTransactionDetails.size() > 0}"> <tr   th:each="transaction:${singleTransactionDetails}">
+    <td th:text="${transaction.userId.firstName}"> person Name </td>
+
+    <td>
+      <p class="fw-normal mb-1"  th:text="${transaction.fromAccountNo}"></p>
+    </td>
+    <td>
+      <p class="fw-normal mb-1" th:text="${transaction.toAccountNo}"></p>
+    </td>
+    <td th:text="${transaction.transactionType}"></td>
+
+    <td  th:text="${transaction.amount}">Verified</td>
+    <td  th:text="${transaction.transactionTime}"></td>
+
+  </tr>
+  </div>
+  <div th:if="${singleTransactionDetails.size() == 0}">
+    <div>
+      <img class="m-5" src="https://sunaccounts.com/wp-content/uploads/2021/04/Integrate-Img.png"
+           width="15%" height="20%">
+      <p class="text-muted mb-0 p-3 m4"> No Transactions Available, Do more Transactions. Thank You!</p>
+    </div>
+  </div>
+
+
+  </tbody>
+</table>
+<div> <a th:href="@{/users}" class="btn btn-outline-dark btn-rounded btn-sm m-3" >go back</a></div>
+</main>

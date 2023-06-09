@@ -1,0 +1,88 @@
+<main class="content">
+<div class="card-body shadow-lg border-warning m-5 h-50" >
+  <div class="alert bg-secondary shadow-lg p-3 m-5  rounded m-2" align="center" role="alert">
+    <h3 >Register Merchant</h3>
+  </div>
+  <form class="row g-3 needs-validation" novalidate action="#" th:action="@{/save}" th:object="${user}"
+           method="POST">
+  <div class="col-md-6 text-start">
+    <label for="validationCustom01" class="form-label">First name</label>
+    <input type="text" th:field="*{firstName}" class="form-control" id="validationCustom01" value="Mark" required>
+    <div class="valid-feedback">
+      Looks good!
+    </div>
+  </div>
+  <div class="col-md-6 text-start">
+    <label for="validationCustom02" class="form-label">Last name</label>
+    <input type="text" th:field="*{lastName}" class="form-control" id="validationCustom02" value="Otto" required>
+    <div class="valid-feedback">
+      Looks good!
+    </div>
+  </div>
+
+  <div class="col-md-6 text-start">
+    <label for="validationCustom03" class="form-label">Mobile No</label>
+    <input type="text" th:field="*{mobileNo}" class="form-control" id="validationCustom03" required>
+    <div class="invalid-feedback">
+      Please provide a valid mobile number.
+    </div>
+  </div>
+  <div class="col-md-6 text-start">
+    <label for="validationCustom03" class="form-label">Email Id</label>
+    <input type="text" th:field="*{email}" class="form-control" id="validationCustom04" required>
+    <div class="invalid-feedback">
+      Please provide a valid Email.
+    </div>
+  </div>
+
+  <div class="col-md-6 text-start">
+    <label for="validationCustom05" class="form-label">Date Of Birth</label>
+    <input type="text" th:field="*{dateOfBirth}" class="form-control" id="validationCustom05" required>
+    <div class="invalid-feedback">
+      Please provide a valid Date of Birth.
+    </div>
+  </div>
+  <div class="col-8 text-start">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+      <label class="form-check-label" for="invalidCheck">
+        Agree to terms and conditions
+      </label>
+      <div class="invalid-feedback">
+        You must agree before submitting.
+      </div>
+    </div>
+      <!--    add hidden field to handle to update-->
+    <input type="hidden"  th:field="${user.id}" />
+    <button class="btn btn-outline-success" type="submit">Submit form</button>
+  </div>
+
+
+</form>
+</div>
+
+
+
+</main>
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+'use strict'
+
+// Fetch all the forms we want to apply custom Bootstrap validation styles to
+var forms = document.querySelectorAll('.needs-validation')
+
+// Loop over them and prevent submission
+Array.prototype.slice.call(forms)
+.forEach(function (form) {
+form.addEventListener('submit', function (event) {
+if (!form.checkValidity()) {
+event.preventDefault()
+event.stopPropagation()
+}
+
+form.classList.add('was-validated')
+}, false)
+})
+})()
+  </script>

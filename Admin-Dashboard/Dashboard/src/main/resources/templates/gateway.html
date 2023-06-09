@@ -1,0 +1,32 @@
+
+<main class="content">
+<div class="col d-flex flex-column " align="center">
+<table   style="width:80%" border="1"
+         class="table table-striped table-responsive-md m-5 shadow-lg">
+    <thead>
+    <tr class="table-warning">
+        <th>Gateway Name</th>
+        <th>User First Name</th>
+        <th>User Last Name</th>
+        <th>Mobile NO</th>
+        <th>Email</th>
+        <th>DOB</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="table-success" th:each="provider:${allProviderUsers}">
+        <td th:text="${provider.gatewayName}"></td>
+        <td  th:text="${provider.users.firstName}"></td>
+        <td th:text="${provider.users.lastName}"></td>
+        <td th:text="${provider.users.mobileNo}"></td>
+        <td th:text="${provider.users.email}"></td>
+        <td th:text="${provider.users.dateOfBirth}"></td>
+    </tr>
+    </tbody>
+</table>
+<div> <a th:href="@{/providers}" class="btn btn-outline-dark btn-rounded btn-sm m-3" >go back</a></div>
+<div>
+    <img src="https://i.pinimg.com/736x/7d/c0/9c/7dc09c90633ae972968c0026ea5c2646.jpg">
+</div>
+</div>
+</main>

@@ -1,0 +1,93 @@
+
+<!--list of providers-->
+<main class="content">
+<div class="col d-flex flex-column " align="center">
+
+    <div class="card  shadow-lg w-80 bg-coloring-heading"  align="center">
+        <h5 class="card-title blink">Payment Gateways</h5>
+        <div class="card-body d-flex flex-row justify-content-center ">
+
+            <div class="card mb-3 m-2  shadow-lg" style="max-width: 240px;">
+                <img src="https://razorpay.com/blog-content/uploads/2019/06/what-is-a-payment-gateway-and-how-does-it-work.png" class="img-fluid rounded-start" >
+                <img src="https://d6xcmfyh68wv8.cloudfront.net/assets/payments/payment_method_cards.png" >
+            </div>
+
+
+        </div>
+    </div>
+    <div class="card text-center bg-card-color ">
+        <div class="card-body">
+            <h5 class="card-title">online payment gateways</h5>
+            <p class="card-text">A Payment Gateway is an eCommerce application service that authorizes credit card or debit card payments for online businesses,
+                online retailers, bricks and clicks, or
+                traditional brick and mortar.</p>
+            <P>**click below button to know the gateway merchants**</P>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row g-3">
+            <div class="col-xxl-3 col-xl-6 col-sm-12">
+                <div class="card" style="width: 16rem;">
+                    <img src="https://logos-marcas.com/wp-content/uploads/2020/04/PayPal-emblema.jpg" class="card-img-top blink" alt="...">
+                    <div class="card-body">
+                        <a th:href="@{/providers/paypal}" class="btn btn-outline-secondary btn-rounded m-3" >Paypal</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xxl-3 col-xl-6 col-sm-12">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://matej.gellen.sk/wp-content/uploads/trustpay-tw.jpg" class="card-img-top blink" alt="...">
+
+                    <div class="card-body">
+                        <a th:href="@{/providers/trustpay}" class="btn btn-outline-secondary btn-rounded m-3" >TrustPay</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xxl-3 col-xl-6 col-sm-12">
+                <div class="card" style="width: 16rem;">
+                    <img src="https://startupgyaan.com/wp-content/uploads/2021/07/fb-razorpay@2x-1024x536@2x.png" class="card-img-top blink" alt="...">
+                    <div class="card-body">
+                        <a th:href="@{/providers/razopay}" class="btn btn-outline-secondary btn-rounded m-3" >Razopay</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xxl-3 col-xl-6 col-sm-12">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://images.assettype.com/afaqs%2Fimport%2Fall%2Fnews%2Fimages%2Fnews_story_grfx%2F2015%2F05%2F44117%2FPayUbiz-Logo.jpg?auto=format%2Ccompress&w=1200" class="card-img-top blink" alt="...">
+                    <div class="card-body">
+                        <a th:href="@{/providers/payu}" class="btn btn-outline-secondary btn-rounded m-3" >Payu</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div> <a  onclick="openForm()" class="btn btn-primary btn-sm mb-3 button" >Add Provider-Merchant</a></div>
+    <div id="form1"  style = "display:none">
+        <form  action="#" th:action="@{/add}" th:object="${provider}  "
+              method="POST">
+            <input type="text" th:field="*{gatewayName}" placeholder="Enter Gateway Name"
+                   class="form-control mb-4 col-4">
+            <input type="text" th:field="*{users}" placeholder="Enter User Id"
+                   class="form-control mb-4 col-4">
+
+            <button  type="submit" class="btn btn-info col-2">Save
+                Provider
+            </button>
+        </form>
+    </div>
+
+
+</div>
+
+</main>
+<script>
+function openForm(){
+var x=document.getElementById("form1");
+if(x.style.display==="none")
+     x.style.display="block";
+}
+</script>
